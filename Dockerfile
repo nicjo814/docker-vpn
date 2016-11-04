@@ -1,15 +1,17 @@
 FROM lsiobase/alpine.python
 MAINTAINER j0nnymoe
 
-# install packages
+# copy local files
+COPY root/ /
+
+# install packages and chmod execs
 RUN \
  apk add --no-cache \
 	curl \
 	iptables \
-	openvpn
+	openvpn && \
 
-# copy local files
-COPY root/ /
+ chmod +x /usr/bin/transmission-update.py
 
 # ports and volumes
 VOLUME /config
