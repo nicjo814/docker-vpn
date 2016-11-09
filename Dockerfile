@@ -11,7 +11,9 @@ RUN \
 	iptables \
 	openvpn && \
 
- chmod +x /usr/bin/transmission-update.py
+ chmod +x /usr/bin/transmission-update.py && \
+ chmod +x /usr/bin/ovpn-up.sh && \
+ chmod +x /usr/bin/ovpn-down.sh
 
 # ports and volumes
 VOLUME /config
